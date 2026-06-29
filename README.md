@@ -1,9 +1,7 @@
 # shinymanager <img src="man/figures/shinymanager.png" width=200 align="right" />
 
-[![Travis build status](https://travis-ci.org/datastorm-open/shinymanager.svg?branch=master)](https://travis-ci.org/datastorm-open/shinymanager)
 [![version](http://www.r-pkg.org/badges/version/shinymanager)](https://CRAN.R-project.org/package=shinymanager)
 [![cranlogs](http://cranlogs.r-pkg.org/badges/shinymanager)](https://CRAN.R-project.org/package=shinymanager)
-[![cran checks](https://cranchecks.info/badges/worst/shinymanager)](https://cranchecks.info/pkgs/shinymanager)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 > Simple and secure authentication mechanism for single 'Shiny' applications. Credentials can be stored in an encrypted 'SQLite' database or on your own SQL Database (PostgreSQL, MySQL, ...). Source code of main application is protected until authentication is successful.
@@ -93,7 +91,7 @@ require(shinymanager)
 
 ````
 
-### News on shinymanager 1.0.6
+### News on shinymanager 1.1.0
 
 * (#220) Added Norwegian Language, Thanks @mcldrchl
 * (#212) Add MS SQL Server support, Thanks @ads40
@@ -160,7 +158,7 @@ credentials <- data.frame(
   start = c("2019-04-15"), # optinal (all others)
   expire = c(NA, "2019-12-31"),
   admin = c(FALSE, TRUE),
-  comment = "Simple and secure authentification mechanism 
+  comment = "Simple and secure authentication mechanism 
   for single ‘Shiny’ applications.",
   stringsAsFactors = FALSE
 )
@@ -326,7 +324,7 @@ Using SQL/Sqlite database protected, an admin mode is available to manage access
 
 ### Use your own function ?
 
-You can also use your own authentification function with ``check_credentials``, for example doing a control to your intern database. ``check_credentials`` must be a function  with two arguments ``user`` & ``password``, returning a ``list`` with at least ``result`` (``TRUE`` to authorize access, or ``FALSE``) and ``user_info`` (all you want to retrieve from the user in the app):
+You can also use your own authentication function with ``check_credentials``, for example doing a control to your intern database. ``check_credentials`` must be a function  with two arguments ``user`` & ``password``, returning a ``list`` with at least ``result`` (``TRUE`` to authorize access, or ``FALSE``) and ``user_info`` (all you want to retrieve from the user in the app):
 
 ````R
 require(RPostgreSQL)
@@ -432,7 +430,7 @@ You can customize the module (css, image, language, ...).
 
 ### Flexdasboard
 
-It's possible to use ``shinymanager`` authentification on ``flexdashboard`` (but not admin console at moment). You can find information on [this discussion](https://github.com/datastorm-open/shinymanager/issues/51). But it's not a really secure way because user can overpass the authentification using developper console... Prefer use  ``shiny`` application with ``secure_app`` function.
+It's possible to use ``shinymanager`` authentication on ``flexdashboard`` (but not admin console at moment). You can find information on [this discussion](https://github.com/datastorm-open/shinymanager/issues/51). But it's not a really secure way because user can overpass the authentication using developper console... Prefer use  ``shiny`` application with ``secure_app`` function.
 
 ### shinyapps.io
 

@@ -1,4 +1,4 @@
-# shinymanager 1.0.6
+# shinymanager 1.1.0
 
 * (#220) Added Norwegian Language, Thanks @mcldrchl
 * (#212) Add MS SQL Server support, Thanks @ads40
