@@ -99,6 +99,7 @@ require(shinymanager)
 * (#212) Add MS SQL Server support, Thanks @ads40
 * (#217) focus_input event fires too late, Thanks @ismirsehregal
 * (#219) Malformed labels using latest shiny version, Thanks @ismirsehregal
+* (#198) FIX duplicated input id 'shinymanager_language' (admin panel & authentication page)
 
 ### News on shinymanager 1.0.510
 
