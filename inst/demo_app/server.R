@@ -18,6 +18,11 @@ server <- function(input, output, session) {
         input$shinymanager_language
     })
     
+    observe({
+      print(input$shinymanager_language)
+      print(input$shinymanager_where)
+      
+    })
     output$shinymanager_where_ <- renderPrint({
         input$shinymanager_where
     })

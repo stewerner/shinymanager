@@ -12,7 +12,7 @@ credentials <- data.frame(
   password = c("shiny", "shinymanager"),
   group = c("all", NA),
   comment = c("Easy interactive web applications with R",
-              "Simple and secure authentification mechanism for single 'Shiny' applications."),
+              "Simple and secure authentication mechanism for single 'Shiny' applications."),
   admin = c(FALSE, TRUE),
   stringsAsFactors = FALSE
 )

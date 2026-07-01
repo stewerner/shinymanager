@@ -89,19 +89,20 @@ secure_app <- function(ui,
                 icon = icon("share")
               )
             ),
-            shinymanager_where("admin")
+            shinymanager_where("admin"),
+            # rendered once here (not per tabPanel) to avoid a duplicated
+            # input id 'shinymanager_language' in the navbarPage (#198)
+            shinymanager_language(lan$get_language())
           ),
           tabPanel(
             title = tagList(icon("house"), lan$get("Home")),
             value = "home",
-            admin_ui("admin", lan),
-            shinymanager_language(lan$get_language())
+            admin_ui("admin", lan)
           ),
           if(show_logs_enabled()){
             tabPanel(
               title = lan$get("Logs"),
-              logs_ui("logs", lan),
-              shinymanager_language(lan$get_language())
+              logs_ui("logs", lan)
             )
           }
         )
@@ -161,8 +162,10 @@ secure_app <- function(ui,
         theme = theme,
         tags$head(head_auth),
         do.call(auth_ui, args),
-        shinymanager_where("authentication"),
-        shinymanager_language(lan$get_language())
+        shinymanager_where("authentication")
+        # 'shinymanager_language' is rendered (and kept up to date on language
+        # change) by auth_server via output$update_shinymanager_language, so we
+        # must not render a second one here (duplicated input id, #198)
       )
     }
   }
